@@ -161,7 +161,7 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## 👤 **AUTHOR**
 
-**Your Name**
+**My Name**
 - GitHub: [@your-username](https://github.com/Developer-Bubai)
 - LinkedIn: [your-linkedin](https://linkedin.com/in/programmer-sahil)
 
