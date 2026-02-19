@@ -1,189 +1,151 @@
-# 🧮 Mini Projects — Python & Machine Learning
+# 🏠 House Price Prediction — Linear Regression
 
-> A collection of beginner-to-intermediate Python projects covering core programming concepts and machine learning fundamentals.
-
----
-
-## 📁 Project Structure
-
-```
-Mini Project/
-│
-├── calculator.py                  # Project 1: Advanced Python Calculator
-├── Project_2__HPR_.ipynb          # Project 2: House Price Prediction
-└── house_price_prediction.csv     # Output: Model prediction results
-```
+A beginner-friendly Machine Learning project that predicts California house prices using **Linear Regression** and the built-in `sklearn` California Housing dataset.
 
 ---
 
-## 🔢 Project 1 — Advanced Calculator
+## 📌 Project Overview
 
-### Overview
-A terminal-based calculator built with Python that supports arithmetic operations, statistical functions, and percentage calculations — all through user input with proper type casting.
-
-### Features
-
-| Feature | Description |
-|--------|-------------|
-| ➕ Addition | Adds two numbers |
-| ➖ Subtraction | Subtracts two numbers |
-| ✖️ Multiplication | Multiplies two numbers |
-| ➗ Division | Divides two numbers (with zero-division check) |
-| 📊 Average | Calculates the mean of a list of numbers |
-| 📈 Median | Finds the middle value of a dataset |
-| 🔁 Mode | Finds the most frequent value(s) |
-| 💯 Percentage | Calculates X% of a given value |
-
-### How to Run
-
-```bash
-python calculator.py
-```
-
-### Sample Interaction
-
-```
-===== Advanced Calculator =====
-1. Addition (+)
-2. Subtraction (-)
-3. Multiplication (*)
-4. Division (/)
-5. Percentage (%)
-6. Average
-7. Median
-8. Mode
-9. Exit
-
-Enter your choice (1-9): 3
-Enter first number: 10
-Enter second number: 5
-Result: 50.0
-```
-
-### Key Concepts Used
-- **User Input** — `input()` function for interactive prompts
-- **Type Casting** — `float()` to convert string input to numbers
-- **Python `statistics` module** — for median and mode
-- **Control Flow** — `while` loop + `if/elif/else` for menu navigation
-- **Error Handling** — handles no-unique-mode case gracefully
+| Item | Detail |
+|------|--------|
+| **Type** | Supervised Learning — Regression |
+| **Algorithm** | Linear Regression |
+| **Dataset** | California Housing (`sklearn.datasets`) |
+| **Goal** | Predict median house value based on neighborhood features |
+| **Environment** | Google Colab / Jupyter Notebook |
 
 ---
 
-## 🏠 Project 2 — House Price Prediction (Linear Regression)
-
-### Overview
-A machine learning project that trains a **Linear Regression** model to predict house prices using the **California Housing Dataset** from `scikit-learn`. No external data download required.
-
-### Tech Stack
+## 🛠️ Tech Stack
 
 | Library | Purpose |
-|--------|---------|
+|---------|---------|
 | `NumPy` | Numerical computations |
-| `Pandas` | Data manipulation & analysis |
+| `Pandas` | Data loading & manipulation |
 | `Matplotlib` | Data visualization |
-| `Scikit-Learn` | ML model, dataset, metrics |
+| `Scikit-Learn` | ML model, dataset & evaluation metrics |
 
-### Dataset — California Housing
+---
 
-Built directly into `sklearn` — no download needed!
+## 📂 Dataset — California Housing
+
+Loaded directly from `sklearn` — **no download needed**.
+
+```python
+from sklearn.datasets import fetch_california_housing
+data = fetch_california_housing()
+```
 
 | Feature | Description |
-|--------|-------------|
+|---------|-------------|
 | `MedInc` | Median income in block group |
 | `HouseAge` | Median house age |
 | `AveRooms` | Average number of rooms |
 | `AveBedrms` | Average number of bedrooms |
 | `Population` | Block group population |
 | `AveOccup` | Average house occupancy |
-| `Latitude` | Block group latitude |
-| `Longitude` | Block group longitude |
+| `Latitude` | Geographic latitude |
+| `Longitude` | Geographic longitude |
 | `Price` *(target)* | Median house value (in $100,000s) |
 
-- **Total Records:** 20,640
-- **Features:** 8
-- **Missing Values:** None ✅
+- **Rows:** 20,640 &nbsp;|&nbsp; **Columns:** 9 &nbsp;|&nbsp; **Missing Values:** None ✅
 
-### Workflow — Step by Step
+---
+
+## 🔄 Project Workflow
 
 ```
 Step 1  → Import Libraries
 Step 2  → Load Dataset (fetch_california_housing)
-Step 3  → Data Understanding (shape, info, describe)
+Step 3  → Data Understanding  (shape, dtypes, describe)
 Step 4  → Check Missing Values
-Step 5  → Select Features (X) and Target (y)
-Step 6  → Train-Test Split (80% train / 20% test)
+Step 5  → Feature / Target Split  (X and y)
+Step 6  → Train-Test Split  (80% train / 20% test)
 Step 7  → Train Linear Regression Model
-Step 8  → Make Predictions
-Step 9  → Evaluate Model (RMSE + R²)
-Step 10 → Visualization: Actual vs Predicted
-Step 11 → Residual Plot (Error Analysis)
-Step 12 → Feature Importance (Coefficients)
-Step 13 → Improvement via Log Transform (Feature Engineering)
+Step 8  → Make Predictions on Test Set
+Step 9  → Evaluate Model  (RMSE + R²)
+Step 10 → Visualization — Actual vs Predicted scatter plot
+Step 11 → Residual Plot  (error analysis)
+Step 12 → Feature Importance  (regression coefficients)
+Step 13 → Improvement via Log Transform  (feature engineering)
 Step 14 → Save Predictions to CSV
 ```
 
-### Model Results
+---
+
+## 📊 Model Results
 
 | Metric | Baseline Model | After Log Transform |
-|--------|---------------|---------------------|
-| RMSE | 0.7456 | 0.2244 |
-| R² Score | 0.5758 | 0.6006 |
+|--------|:--------------:|:-------------------:|
+| **RMSE** | 0.7456 | 0.2244 |
+| **R² Score** | 0.5758 | 0.6006 |
 
-> **RMSE** (Root Mean Square Error) — Lower is better  
-> **R²** (R-Squared Score) — Closer to 1.0 is better
+> 📉 **RMSE** — Root Mean Square Error. Lower = better.  
+> 📈 **R²** — How well the model explains variance. Closer to 1.0 = better.
 
-### Feature Importance (Coefficients)
+---
 
-| Feature | Coefficient | Impact |
-|---------|------------|--------|
-| AveBedrms | +0.783 | ⬆️ Increases price |
-| MedInc | +0.449 | ⬆️ Increases price |
-| HouseAge | +0.010 | ⬆️ Increases price |
-| Population | -0.000002 | ⬇️ Decreases price |
-| AveOccup | -0.004 | ⬇️ Decreases price |
-| AveRooms | -0.123 | ⬇️ Decreases price |
-| Latitude | -0.420 | ⬇️ Decreases price |
-| Longitude | -0.434 | ⬇️ Decreases price |
+## 🔍 Feature Importance (Coefficients)
 
-### How to Run
+| Feature | Coefficient | Effect on Price |
+|---------|:-----------:|----------------|
+| `AveBedrms` | +0.783 | ⬆️ Increases |
+| `MedInc` | +0.449 | ⬆️ Increases |
+| `HouseAge` | +0.010 | ⬆️ Increases |
+| `Population` | −0.000002 | ⬇️ Decreases |
+| `AveOccup` | −0.004 | ⬇️ Decreases |
+| `AveRooms` | −0.123 | ⬇️ Decreases |
+| `Latitude` | −0.420 | ⬇️ Decreases |
+| `Longitude` | −0.434 | ⬇️ Decreases |
 
-Open in **Google Colab** or any Jupyter-compatible environment:
+> A **positive** coefficient means the feature pushes the predicted price up; a **negative** coefficient pulls it down.
 
+---
+
+## 🚀 How to Run
+
+### Option 1 — Google Colab *(recommended)*
+1. Upload `Project_2__HPR_.ipynb` to [Google Colab](https://colab.research.google.com/)
+2. Click **Runtime → Run All**
+
+### Option 2 — Local Jupyter
 ```bash
+# Install dependencies
+pip install numpy pandas matplotlib scikit-learn
+
+# Launch notebook
 jupyter notebook Project_2__HPR_.ipynb
 ```
 
-Or open directly in Google Colab:
-> Upload the `.ipynb` file → Runtime → Run All
+---
 
-### Output
-Predictions are saved to:
+## 📁 Files
+
 ```
-house_price_prediction.csv
+📦 Project
+ ┣ 📓 Project_2__HPR_.ipynb        # Main notebook
+ ┗ 📄 house_price_prediction.csv   # Saved prediction results (Actual vs Predicted)
 ```
 
 ---
 
-## 🛠️ Requirements
+## 🧠 Key Concepts Covered
 
-```bash
-pip install numpy pandas matplotlib scikit-learn
-```
-
----
-
-## 📌 Notes
-
-- Project 1 was built using **Claude AI** as an AI coding assistant
-- Project 2 uses the **California Housing dataset** available directly inside `sklearn` — no external dataset needed
-- The notebook was developed and tested on **Google Colab**
+- Loading a built-in `sklearn` dataset
+- Exploratory Data Analysis (EDA)
+- Train / Test split with `random_state` for reproducibility
+- Training and evaluating a Linear Regression model
+- Interpreting RMSE and R² metrics
+- Scatter plot & residual plot visualization
+- Feature engineering with log transformation (`np.log1p`)
+- Exporting results to CSV
 
 ---
 
 ## 👤 Author
 
-> **BUBAI DE**
-> GitHub: [@My-username](https://github.com/Developer-Bubai)
+>**BUBAI DE**
+>GitHub: [@My-username](https://github.com/Developer-Bubai)
 
 ---
 
