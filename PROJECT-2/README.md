@@ -144,11 +144,11 @@ jupyter notebook Project_2__HPR_.ipynb
 
 ## 👤 Author
 
->**BUBAI DE**
->GitHub: [@My-username](https://github.com/Developer-Bubai)
+**BUBAI DE**
+- GitHub: [@Developer-Bubai](https://github.com/Developer-Bubai)
+- LinkedIn: [Developer-Bubai](www.linkedin.com/in/bubai-de-0599093b1)
 
----
-
+  
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
