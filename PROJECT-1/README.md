@@ -159,12 +159,11 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## 👤 **AUTHOR**
+## 👤 Author
 
-**My Name**
-- GitHub: [@my-username](https://github.com/Developer-Bubai)
-- LinkedIn: [my-linkedin](https://linkedin.com/in/programmer-sahil)
-
+**BUBAI DE**
+- GitHub: [@Developer-Bubai](https://github.com/Developer-Bubai)
+- LinkedIn: [Developer-Bubai](www.linkedin.com/in/bubai-de-0599093b1)
 ---
 
 > *"The goal is to turn data into information, and information into insight."* — Carly Fiorina
